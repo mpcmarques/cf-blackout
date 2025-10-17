@@ -60,10 +60,12 @@ Customize `Config.NoBlackoutZones` in your config file to define your own safe z
 
 ## 📘 Dependencies
 - ox_lib
-💬 Community & Support
 
-## Need help or want to share feedback?
+
+## 💬 Community & Support
+
+### Need help or want to share feedback?
 [Join our Discord community!](https://discord.gg/D5wT8yQRfP)
 
-## 🛒 Check Out More Scripts
+### 🛒 Check Out More Scripts
 [Tebex store](https://codex-factory.tebex.io/)
