@@ -8,7 +8,7 @@ Ideal for **survival or apocalypse-style servers**, this script adds an immersiv
 
 ## 🧩 Features
 
-- 🌑 Permanent blackout effect managed in a background thread  
+- 🌑 Permanent blackout effect  
 - 🚫 Configurable "no blackout" zones  
 - 💡 Dynamically toggles global artificial lighting  
 - ⚙️ Lightweight and performance-friendly  
@@ -17,13 +17,11 @@ Ideal for **survival or apocalypse-style servers**, this script adds an immersiv
 
 ## 🗂️ Script Overview
 
-The script starts a permanent blackout loop that:
-1. Disables world lights (`Citizen.InvokeNative(0xE2B187C0939B3D32, 0)`).
-2. Forces artificial lights on, excluding vehicles.
-3. Runs continuously until a player enters a **No Blackout Zone**, defined in your `Config.NoBlackoutZones`.
+The script starts a permanent blackout that:
+1. Disables world lights.
+3. Runs until a player enters a **No Blackout Zone**, defined in your `Config.NoBlackoutZones`.
 
 When the player enters such a zone:
-- The blackout loop stops.
 - Artificial lights return to normal.
 - Once the player exits the zone, the blackout loop automatically resumes.
 
