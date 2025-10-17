@@ -38,11 +38,32 @@ Config.NoBlackoutZones = {
     {
         coords = vec3(200.0, -900.0, 30.0),
         radius = 100.0,
-        distances = { inside = 0, outside = 150 }
     },
     {
         coords = vec3(-500.0, 300.0, 40.0),
         radius = 150.0,
-        distances = { inside = 0, outside = 200 }
     }
 }
+```
+
+## Installation
+
+Place the script in your resource folder (for example: resources/[local]/cf-blackout)
+
+Ensure dependencies are loaded (requires `ox_lib`)
+
+Add the following line to your server.cfg:
+
+`ensure cf-blackout`
+
+Customize `Config.NoBlackoutZones` in your config file to define your own safe zones
+
+## 📘 Dependencies
+- ox_lib
+💬 Community & Support
+
+## Need help or want to share feedback?
+[Join our Discord community!](https://discord.gg/D5wT8yQRfP)
+
+## 🛒 Check Out More Scripts
+[Tebex store](https://codex-factory.tebex.io/)
