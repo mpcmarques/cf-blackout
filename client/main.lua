@@ -3,13 +3,14 @@ local isLooping = false
 local function startBlackoutLoop()
     if isLooping then return end
 
+     SetArtificialLightsState(true)
+     SetArtificialLightsStateAffectsVehicles(false)
+    
     CreateThread(function()
         isLooping = true
-
+            
         while isLooping do
             Citizen.InvokeNative(0xE2B187C0939B3D32, 0)
-            SetArtificialLightsState(true)
-            SetArtificialLightsStateAffectsVehicles(false)
             Wait(0)
         end
 
@@ -26,8 +27,7 @@ CreateThread(function()
         local point = lib.points.new({
             id = tostring(k),
             coords = v.coords,
-            distance = v.radius,
-            distances = v.distances
+            distance = v.radius
         })
 
         function point:onEnter()
