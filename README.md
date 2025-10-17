@@ -1,4 +1,4 @@
-# 🔌 Permanent Blackout Loop for FiveM
+# 🔌 Permanent Blackout Script for FiveM
 
 This resource provides a **permanent blackout system** for FiveM servers, automatically disabling and enabling artificial lights depending on the player’s position. It includes **exclusion zones** where blackouts are disabled (e.g., for safe zones, cities, or mission areas).
 
