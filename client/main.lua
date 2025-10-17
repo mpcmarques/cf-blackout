@@ -1,27 +1,21 @@
-local isLooping = false
+local isBlackout = false
 
-local function startBlackoutLoop()
-    if isLooping then return end
+local function startBlackout()
+    if isBlackout then return end
 
      SetArtificialLightsState(true)
      SetArtificialLightsStateAffectsVehicles(false)
-    
-    CreateThread(function()
-        isLooping = true
-            
-        while isLooping do
-            Citizen.InvokeNative(0xE2B187C0939B3D32, 0)
-            Wait(0)
-        end
+end
 
-        Citizen.InvokeNative(0xE2B187C0939B3D32, 1)
-        SetArtificialLightsState(false)
-        SetArtificialLightsStateAffectsVehicles(false)
-    end)
+local function stopBlack() 
+    if not isBlackout then return end
+    
+    SetArtificialLightsState(false)
+    SetArtificialLightsStateAffectsVehicles(false)
 end
 
 CreateThread(function()
-    startBlackoutLoop()
+    startBlackout()
 
     for k, v in ipairs(Config.NoBlackoutZones) do
         local point = lib.points.new({
@@ -31,13 +25,11 @@ CreateThread(function()
         })
 
         function point:onEnter()
-            isLooping = false
+            stopBlackout()
         end
 
         function point:onExit()
-            if not isLooping then
-                startBlackoutLoop()
-            end
+             startBlackout()
         end
     end
 end)
