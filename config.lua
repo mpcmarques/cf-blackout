@@ -13,5 +13,3 @@ Config.NoBlackoutZones = {
     --     radius = 100
     -- }
 }
-
-Config.Debug = false
